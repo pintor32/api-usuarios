@@ -1,4 +1,4 @@
-# API Usuarios — Taller Semana 7
+# API Usuarios
 
 Proyecto base para el taller de **Conexiones, Pool, CRUD y API REST** con Node.js, Sequelize y PostgreSQL.
 
@@ -19,7 +19,7 @@ npm -v
 psql --version
 ```
 
-## 🚀 Setup (hazlo antes de la clase)
+## 🚀 Setup
 
 ### 1. Instalar dependencias de Node
 
@@ -79,17 +79,6 @@ api-usuarios/
 └── README.md
 ```
 
-## 📚 ¿Qué haremos en clase?
-
-Durante los 90 minutos construiremos juntos:
-
-1. **`src/database.js`** — Configuración del pool de conexiones con Sequelize
-2. **`src/models/Usuario.js`** — Modelo de la entidad Usuario
-3. **`src/controllers/usuarioController.js`** — Lógica CRUD (crear, leer, actualizar, eliminar)
-4. **`src/routes/usuarioRoutes.js`** — Rutas REST (GET, POST, PUT, DELETE)
-5. **`src/server.js`** — Servidor Express que une todo
-6. **`public/index.html`** — Página que consume la API con `fetch`
-
 ## ▶️ Cómo ejecutar el proyecto (una vez tengamos el código)
 
 ```bash
@@ -114,12 +103,3 @@ Verifica que el servicio de PostgreSQL esté corriendo:
 
 **Credenciales incorrectas:**
 Revisa que los valores en `.env` coincidan con lo que configuraste al instalar PostgreSQL.
-
-## 💡 Plan B: usar SQLite en lugar de PostgreSQL
-
-Si no logras instalar PostgreSQL a tiempo, puedes usar SQLite (no requiere instalación adicional).
-Avísale al profesor al inicio de la clase para que te indique los ajustes al código.
-
----
-
-**¡Nos vemos en clase!** 🚀
