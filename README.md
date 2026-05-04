@@ -57,27 +57,6 @@ copy .env.example .env
 
 Abre `.env` y verifica que los valores correspondan a tu instalación de PostgreSQL.
 
-### 4. Verifica que todo esté listo
-
-La estructura de tu proyecto debe verse así:
-
-```
-api-usuarios/
-├── node_modules/       ← creado por npm install
-├── public/             ← (vacío por ahora)
-├── sql/
-│   └── init.sql
-├── src/
-│   ├── controllers/    ← (vacío — lo llenaremos en clase)
-│   ├── models/         ← (vacío — lo llenaremos en clase)
-│   ├── routes/         ← (vacío — lo llenaremos en clase)
-│   └── (server.js y database.js se crearán en clase)
-├── .env                ← ya configurado
-├── .env.example
-├── .gitignore
-├── package.json
-└── README.md
-```
 
 ## ▶️ Cómo ejecutar el proyecto (una vez tengamos el código)
 
