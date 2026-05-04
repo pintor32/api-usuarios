@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Gestión de Usuarios</title>
+  <style>
+    body { font-family: Arial; max-width: 600px; margin: 2em auto; padding: 1em; }
+    input, button { padding: 0.5em; margin: 0.25em; }
+    li { margin: 0.5em 0; }
+  </style>
+</head>
+<body>
+  <h1>Usuarios</h1>
+  <ul id="lista"></ul>
+
+  <h2>Nuevo usuario</h2>
+  <input id="nombre" placeholder="Nombre">
+  <input id="email" placeholder="Email" type="email">
+  <input id="edad" placeholder="Edad" type="number">
+  <button onclick="crear()">Crear</button>
+
+  <script>
+    const API = 'http://localhost:3000/usuarios';
+
+    async function cargar() {
+      const res = await fetch(API);
+      const usuarios = await res.json();
+      document.getElementById('lista').innerHTML = usuarios
+        .map(u => `<li>${u.id} — ${u.nombre} (${u.email}, ${u.edad} años)</li>`)
+        .join('');
+    }
+
+    async function crear() {
+      const body = {
+        nombre: document.getElementById('nombre').value,
+        email: document.getElementById('email').value,
+        edad: Number(document.getElementById('edad').value)
+      };
+      const res = await fetch(API, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(body)
+      });
+      if (res.ok) {
+        document.getElementById('nombre').value = '';
+        document.getElementById('email').value = '';
+        document.getElementById('edad').value = '';
+        cargar();
+      } else {
+        alert('Error al crear usuario');
+      }
+    }
+
+    cargar();
+  </script>
+</body>
+</html>

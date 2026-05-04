@@ -1,0 +1,11 @@
+# Copia este archivo como .env y ajusta los valores
+# En Linux/Mac:  cp .env.example .env
+# En Windows:    copy .env.example .env
+
+PORT=3000
+
+DB_HOST=localhost
+DB_PORT=5432
+DB_USER=app_taller
+DB_PASSWORD=Clave#2026
+DB_NAME=taller_bd
